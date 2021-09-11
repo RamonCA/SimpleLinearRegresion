@@ -15,7 +15,7 @@ public class beta_calculation {
     public void point_calculation (){
         double beta_0 = this.beta_0();
         double beta_1 = this.beta_1();
-        System.out.println("Ecuacion de regresion lineal simple: ŷ = " + beta_0 + " + " + beta_1 + "x");
+        System.out.println("Ecuacion de regresion lineal simple: y = " + beta_0 + " + " + beta_1 + "x");
         System.out.println("El valor de ventas con una inversion en Advertising de " + this.value + " millones es: " + (beta_1 * this.value + beta_0));
     }
 
