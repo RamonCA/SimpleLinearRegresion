@@ -4,18 +4,24 @@ public class beta_calculation {
 
     private final int [] val_x;
     private final int [] val_y;
+    private final int value;
 
-    public beta_calculation(int[] val_x, int[] val_y) {
+    public beta_calculation(int[] val_x, int[] val_y, int value) {
         this.val_x = val_x;
         this.val_y = val_y;
+        this.value = value;
     }
 
-    public double beta_0(){
+    public void point_calculation (){
+        System.out.println("El valor de ventas con una inversion en Advertising de " + this.value + " millones es: " + (this.beta_1() * this.value + this.beta_0()));
+    }
+
+    private double beta_0(){
         return (double) (this.sum_xsqr() * this.sum_y() - this.sum_x() * this.sum_xy()) / (this.val_x.length *
                 this.sum_xsqr() - this.sum_x() * this.sum_x());
     }
 
-    public double beta_1(){
+    private double beta_1(){
         return (double) (this.val_x.length * this.sum_xy() - this.sum_x() * this.sum_y()) / (this.val_x.length *
                 this.sum_xsqr() - this.sum_x() * this.sum_x());
     }

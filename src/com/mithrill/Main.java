@@ -7,17 +7,20 @@ public class Main {
         int [] x = {23,26,30,34,43,48,52,57,58};
         int [] y = {651,762,856,1063,1190,1298,1421,1440,1518};
 
-        int arg;
+        int arg = 0;
 
-        for (int i = 0; i < args.length; i++) {
-            arg = Integer.parseInt(args[i]);
+        for (String itm : args) {
+            try{
+                arg = Integer.parseInt(itm);
+            }catch(NumberFormatException e){
+                System.out.println("Error por favor ingrese un numero entero positivo");
+            }
+
         }
 
-        beta_calculation test = new beta_calculation(x,y);
 
-        double beta_0 = test.beta_0();
-        double beta_1 = test.beta_1();
 
-        System.out.println("punto de interseccion: " + beta_0 + " pendiente: " + beta_1);
+        beta_calculation test = new beta_calculation(x,y,arg);
+        test.point_calculation();
     }
 }
